@@ -95,5 +95,20 @@ int main (){
 	return 0;
 } 
 
-
+#include <iostream>  //这一段代码是使用正规算法写的
+#include <iomanip>
+#include <stdio.h>
+using namespace std;
+int main (){
+	
+	char ch='b';
+	int i=3,j=5;
+    float x=22.354, Y=435.6789;
+    int a;
+    a=(int)ch;
+	cout<<"ch="<<"'b'"<< ',' << "ASCII=" <<a<< endl;
+	cout<<"i="<<i<<"      "<<"j="<<j<<endl;
+	cout<<setprecision(2)<<std::fixed<<"x="<<x<<"   "<<"Y="<<Y;
+	return 0;
+} 
 
