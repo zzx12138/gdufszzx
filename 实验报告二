@@ -30,8 +30,36 @@ int main (){
 	int i, j;
 	i=0, j=0;
 	i+=j+=2 ;
-	cout<<"i="<< i<<' '<<"j="<<j;
-	
+	cout<<"i="<< i<<' '<<"j="<<j;	
 } 
 
 
+ #include <iostream>
+using  namespace std;
+int main()
+{
+	char  c1,c2,c3,c4,c5;
+   cin>>c1>>c2>>c3>>c4>>c5 ;
+   
+	c1=c1+4;
+	c2=c2+4;
+	c3=c3+4;
+	c4=c4+4;
+	c5=c5+4;
+	cout<<c1<<c2<<c3<<c4<<c5;
+	return 0;
+}
+ 
+ #include <iostream>
+using  namespace std;
+int main()
+{
+   char c;
+   while (cin>>c){
+  
+   
+   c+=4;
+   cout<<c; }
+	return 0;
+}
+ 
