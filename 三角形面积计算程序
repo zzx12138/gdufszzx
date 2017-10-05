@@ -1,0 +1,24 @@
+#include <math.h>
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main (){
+	float a,b,c,s,Area;
+	cout<<"本程序是用于计算三角形面积"<<endl;
+	cout<<"a=";
+	cin>> a ;
+	cout<<"b=";
+	cin>> b ;
+	cout<<"c=";
+	cin>> c ;
+	s=(a+b+c)/2;
+	if((s-a>0)&&(s-b>0)&&(s-c>0)){
+	Area =sqrt( s* (s-a) * (s-b)*(s-c));
+	cout <<setprecision(2) <<std::fixed <<"Area=" <<Area<<endl;
+	
+	}
+	else {
+	cout<<"输入错误！！";
+	}
+	return 0; 
+}
