@@ -1,0 +1,36 @@
+
+public class Mankind {
+	private int sex;
+     private int salary;
+		public Mankind (int sex , int salary) {
+		this.sex=sex;
+		this.salary=salary;
+		}
+    void manOrWoman() {
+    	if(sex==1);
+    	System.out.println("man");
+    	if(sex==0);
+    	System.out.println("woman");
+    }
+    void employeed() {
+    	if (salary==0);
+    	System.out.println("no job");
+    	if (salary!=0);
+    	System.out.println("job");
+    class Kids extends Mankind{
+    	public Kids(int sex, int salary) {
+			super(sex, salary);
+			// TODO Auto-generated constructor stub
+		}
+		private int yearsOld;
+     public int getyearsOld() {
+    	 Object yearOld;
+		return this.yearsOld=yearsOld;
+     }
+     public void printAge () {
+    	 System.out.println(this.yearsOld+"years old");
+     }
+    }
+    	
+    }
+}
