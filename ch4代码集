@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+int main (){
+	int a;
+	cout<<"请输入一个年份：";
+	cin>>a;
+	if(a%4==0)
+	   if(a%100==0)
+	   cout<<a<<"年不是闰年"<<endl;
+	   else
+	   cout<< a<<"年是闰年"<<endl;
+	else cout<<a<<"年不是闰年"<<endl;   
+	return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main (){
+	int a;
+	cout<<"请输入一个年份：";
+	cin>>a;
+	if(a%4!= 0) 
+	cout<<"该年份不是闰年";
+	else if (a%100==0)
+	cout<<"该年份不是闰年";
+	else 
+	cout<<"该年份是闰年"; 
+	return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main (){
+	int a;
+	cout<<"请输入一个年份：";
+	cin>>a;
+	if (a%4==0&&a%100!=0)
+	cout<<"该年份是闰年"<<endl;
+	else 
+	cout<<"该年份不是闰年"<<endl; 
+	return 0;
+}
+
