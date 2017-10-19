@@ -62,3 +62,29 @@ int main(void)
     }
     return 0;
 }
+ 
+ 
+ #include <iostream>
+using namespace std;
+int main (){
+	char a;
+	int b=1,c=0,d=0,e=0,f=0;
+	
+	cin>>a;
+	for(int i=1;i<=17;i++)
+	{
+	  cin.get(a);
+	  if ('A'<=a&&a<='Z')
+	  b++;
+	  else if ('a'<=a&&a<='z')
+	  c++;
+	  else if (a==' ')
+	  d++;
+	  else if ('0'<=a&&a<='9')
+	  e++;
+	  else
+	  f++;	
+	}
+	cout<<b<<" "<<c<<" "<<e<<" "<<d<<" "<<f<<endl;
+	return 0;
+}
