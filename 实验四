@@ -29,3 +29,36 @@ int main (){
 	system("pause");
 }
 
+#include <iostream>
+using namespace std;
+int main(void)
+{
+    int a=8;
+    for (int b=1;b<=4;b++)
+    {
+	    a--;
+		for (int n=1;n<=7;n++)
+	    {
+		    if (n>=b&&n<=a)
+	            cout<<"*";
+	        else
+	            cout<<" ";
+        }
+        cout<<'\n';
+    }
+
+    int x=4;
+	for (int y=3;y>=1;y--) 
+    {
+	    x++;
+	    for (int n=1;n<=7;n++)
+	    {
+		    if (n>=y&&n<=x)
+	            cout<<"*";
+	        else
+	            cout<<" ";
+		}
+	    cout<<'\n';
+    }
+    return 0;
+}
