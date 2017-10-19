@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main (){
+	int N,n;
+	cout<<"请输入一个100到1000之间的正整数"<<endl;
+	cin>>N;
+	for (int i=1;i<=N;i++)
+	 for (int j=1;j<=N;j++)
+	  for (int k=1;k<=N;k++)
+	if (i*1+j*2+k*5==N){
+		cout<<"一元"<<i<<"个"<<" "<<"两元"<< j<< "个"<<" "<<"五元"<<k<<" "<<"个"<<endl; 
+	n++;
+	} 
+	cout<<"总的组合数为："<<n<<endl;
+}
+
+
+#include <iostream>
+using namespace std;
+int main (){
+	cout<<"请输入一个年份：";
+	int a;
+	cin>>a;
+	if (a%4==0&&a%100!=0)
+	cout<<"该年是闰年"<<endl;
+	else 
+	cout<<"该年不是闰年"<<endl;
+	return 0;
+	system("pause");
+}
+
