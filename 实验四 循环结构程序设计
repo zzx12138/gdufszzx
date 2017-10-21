@@ -1,0 +1,160 @@
+#include <iostream>
+using namespace std;
+
+int  main()
+{
+	char  op;  
+	int  num1, num2, result;
+    int i;
+	loop :cin >> num1 >> op >> num2;           // A 
+	switch (op)
+	{  
+		case '+' : result =num1+num2; break;
+		case '-' : result =num1-num2; break;
+		case '*' : result =num1*num2; break;
+		case '/' : result =num1/num2; break;
+		default: cout << "运算符非法." << endl;
+	} 
+	
+	cout << num1 << op << num2 << "=" << result << endl;
+	cout<<"请问是否需要继续进行计算？愿意请输入数字1，否则请输入数字0 "<<endl;
+	cin>>i;
+	if (i==1) 
+	goto loop;
+	else 
+	cout<<"计算结束"<<endl; 
+	return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int  main()
+{
+	char  op;  
+	int  num1, num2, result;
+    int i;
+    cout<<"欢迎使用本计算器软件！！ "<<endl;
+	while (cin >> num1 >> op >> num2)             // A 
+	{
+	switch (op)
+	{  
+		case '+' : result =num1+num2; break;
+		case '-' : result =num1-num2; break;
+		case '*' : result =num1*num2; break;
+		case '/' : result =num1/num2; break;
+		default: cout << "运算符非法." << endl;
+	
+	}
+	cout << num1 << op << num2 << "=" << result << endl;
+	cout<<"你是否与愿意继续使用计算器？是请输入1，否请输入0."<<endl;
+	cin>>i;
+	if (i!=1)
+	break;
+	}
+	return 0;
+}
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int  main()
+{
+	cout<<"请输入一篇英文新闻：";
+	char str[1024];
+	int times=0,symbol=0;
+	int i=0,a1=0,b1=0,c1=0,d1=0,e1=0,f1=0,g1=0,h1=0,i1=0,j1=0,k1=0,l1=0,m1=0,n1=0,o1=0,p1=0,q1=0,r1=0,s1=0,t1=0,u1=0,v1=0,w1=0,x1=0,y1=0,z1=0;
+	while ((str[i]=getchar() )!='#' ){
+		times++;
+	 if (str[i]=='a'||str[i]=='A')
+	a1++;
+	else if(str[i]=='b'||str[i]=='B')
+	b1++;	
+	else if(str[i]=='c'||str[i]=='C')
+	c1++;	
+	else if(str[i]=='d'||str[i]=='D')
+	d1++;	
+	else if(str[i]=='e'||str[i]=='E')
+	e1++;	
+	else if(str[i]=='f'||str[i]=='F')
+	f1++;	
+	else if(str[i]=='g'||str[i]=='G')
+	g1++;	
+	else if(str[i]=='h'||str[i]=='H')
+	h1++;	
+	else if(str[i]=='i'||str[i]=='I')
+	i1++;	
+	else if(str[i]=='j'||str[i]=='J')
+	j1++;	
+	else if(str[i]=='k'||str[i]=='K')
+	k1++;	
+	else if(str[i]=='l'||str[i]=='L')
+	l1++;	
+	else if(str[i]=='m'||str[i]=='M')
+	m1++;	
+	else if(str[i]=='n'||str[i]=='N')
+	n1++;	
+	else if(str[i]=='o'||str[i]=='O')
+	o1++;	
+	else if(str[i]=='p'||str[i]=='P')
+	p1++;	
+	else if(str[i]=='q'||str[i]=='Q')
+	q1++;	
+	else if(str[i]=='r'||str[i]=='R')
+	r1++;	
+	else if(str[i]=='s'||str[i]=='S')
+	s1++;	
+	else if(str[i]=='t'||str[i]=='T')
+	t1++;	
+	else if(str[i]=='u'||str[i]=='U')
+	u1++;	
+	else if(str[i]=='v'||str[i]=='V')
+	v1++;	
+	else if(str[i]=='w'||str[i]=='W')
+	w1++;	
+	else if(str[i]=='x'||str[i]=='X')
+	x1++;	
+	else if(str[i]=='y'||str[i]=='Y')
+	y1++;	
+	else if (str[i]=='z'||str[i]=='Z')
+	z1++;
+	else
+	symbol++;
+	}
+	cout<<"a:"<<a1<<endl; 
+    cout<<"b:"<<b1<<endl;
+    cout<<"c:"<<c1<<endl;
+	cout<<"d:"<<d1<<endl;
+	cout<<"e:"<<e1<<endl;
+	cout<<"f:"<<f1<<endl;
+	cout<<"g:"<<g1<<endl;
+	cout<<"h:"<<h1<<endl;
+	cout<<"i:"<<i1<<endl;
+	cout<<"j:"<<j1<<endl;
+	cout<<"k:"<<k1<<endl;
+	cout<<"l:"<<l1<<endl;
+	cout<<"m:"<<m1<<endl;
+	cout<<"n:"<<n1<<endl;
+	cout<<"o:"<<o1<<endl;
+	cout<<"p:"<<p1<<endl;
+	cout<<"q:"<<q1<<endl;
+	cout<<"r:"<<r1<<endl;
+	cout<<"s:"<<s1<<endl;
+	cout<<"t:"<<t1<<endl;
+	cout<<"u:"<<u1<<endl;
+	cout<<"v:"<<v1<<endl;
+	cout<<"w:"<<w1<<endl;
+	cout<<"x:"<<x1<<endl;
+	cout<<"y:"<<y1<<endl;
+	cout<<"z:"<<z1<<endl;
+	cout<<"总计共有字母:"<<(times-symbol)<<"个"<<endl;
+	system("pause");
+ 	return 0;
+}
