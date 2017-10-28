@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>  //四个值的平均值
 using namespace std;
 double ave(int a,int b,int c,int d){
 	return (a+b+c+d)/4.0;
@@ -8,5 +8,42 @@ int main (){
 	cin>>a>>b>>c>>d;
 	ave(a,b,c,d);
 	cout<<ave(a,b,c,d)<<endl;
+	return 0 ;
+}
+
+#include <iostream> //重载 比较两个值中那个比较小 
+using namespace std;
+int min(int a,int b)
+{
+return (a>b?b:a);
+}
+int min(double a, double b){
+return (a>b?b:a);
+}
+int main (){
+double a,b;
+cin>>a>>b;
+min(a,b);
+cout<<min(a,b)<<endl;
+}
+
+
+#include <iostream> // 十进制与二进制的转换
+using namespace std;
+long long int erjinzhi(int a){
+	if(a%2!=0&&a!=0)
+	{a=(a-1)/2;
+	cout<<1;
+	return erjinzhi( a);
+	}
+	else (a!=0);
+	a/=2;
+	cout<<0;
+	return erjinzhi( a);
+}
+int main (){
+	int a;
+	cin>>a;
+	cout<<erjinzhi(a)<<endl;
 	return 0 ;
 }
