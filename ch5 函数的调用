@@ -31,7 +31,9 @@ cout<<min(a,b)<<endl;
 #include <iostream> // 十进制与二进制的转换
 using namespace std;
 long long int erjinzhi(int a){
-	if(a%2!=0&&a!=0)
+	if (a==0)
+	return 0;
+	else if(a%2!=0&&a!=0)
 	{a=(a-1)/2;
 	cout<<1;
 	return erjinzhi( a);
@@ -44,6 +46,13 @@ long long int erjinzhi(int a){
 int main (){
 	int a;
 	cin>>a;
-	cout<<erjinzhi(a)<<endl;
+	int n=0;
+	int c=erjinzhi(a);
+    while(1)
+{
+   n=c%10;
+   c/=10;
+   }
+	cout<<n<<endl;
 	return 0 ;
 }
