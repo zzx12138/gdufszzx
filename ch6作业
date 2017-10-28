@@ -1,0 +1,21 @@
+ #include <iostream> // 十进制与二进制的转换
+using namespace std;
+long long int erjinzhi(int a){
+	if (a==0)
+	return 0;
+	else if(a%2!=0&&a!=0)
+	{a=(a-1)/2;
+	cout<<1;
+	return erjinzhi( a);
+	}
+	else (a!=0);
+	a/=2;
+	cout<<0;
+	return erjinzhi( a);
+}
+int main (){
+	int a,b;
+	cin>>a;
+	int c=erjinzhi(a);
+	return 0 ;
+}
