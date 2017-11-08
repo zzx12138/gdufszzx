@@ -1,0 +1,82 @@
+#include <iostream>      //判断是否为回文数字
+using namespace std;
+int b[10];
+int c;
+void num(int a)
+{
+	int i=0;
+	while (a%10!=0)
+	{
+		b[i]=(a%10);
+		a=a/10;
+		i++;
+	}
+	//for(int j=0;j<i;j++)
+	//cout<<b[j];
+	if (i==1)
+	cout<<c<<"是回文数"<<endl;
+	else if (i>1)
+	{
+	for(int d=0;d<(i-1)/2;d++)
+	
+	{
+	
+	if(b[d]!=b[i-d-1])
+	{
+		cout<<c<<"不是回文数"<<endl;
+		break;
+	}
+	if((i-1)/2-1==d) cout<<c<<"是回文数"<<endl;
+    }
+    }
+    
+
+}
+
+
+int main()
+{
+	cout<<"请输入一个数字，此程序会判断是否为回文数："<<endl; 
+    int a;
+	cin>>c;
+	a=c;
+	 num(a) ;
+	return 0;
+}
+
+
+#include <iostream>    //十个同学的成绩的输入代码
+#define n 10  
+using namespace std;
+void bubble(int a[])
+{
+int i,j;
+for(i=0;i<n-1;i++)
+for(j=0;j<n-1;j++)
+if(a[j]<a[j+1])
+{
+	int t;
+t=a[j];
+a[j]=a[j+1];
+a[j+1]=t;
+}
+}
+
+
+int main ()
+{
+int a[10];
+for(int i=0;i<10;i++)
+{cout<<"请输入第"<<i+1<<"位同学的成绩：";
+cin>>a[i];
+cout<<endl;}
+bubble(a);
+cout<<"所有同学的成绩从高到低为：";
+for(int i=0;i<10;i++)
+cout<<" "<<a[i];
+
+return 0;
+}
+
+
+
