@@ -79,4 +79,83 @@ return 0;
 }
 
 
-
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+/*void bubble(double ave[]) //平均分排序 
+{
+int i,j;
+for(i=0;i<4;i++) //4个数字 
+for(j=0;j<4;j++)//4轮比较 
+if(ave[j]<ave[j+1])
+{
+int t;
+t=j;
+j=j+1;
+(j+1)=t;
+}
+}*/
+void bubble(double ave[],int tran[][3],char name[]) //平均分排序 
+{
+int i,j;
+for(i=0;i<4;i++) //4个纵向数据 
+for(j=0;j<4;j++)//4轮比较 
+if(ave[j]<ave[j+1])
+{
+	double t,t1,t2,t3,t4; //三个不同类型数组的冒泡排序 
+t=ave[j];
+t1=tran[j][0];
+t2=tran[j][1];
+t3=tran[j][2];
+t4=name[j];
+ave[j]=ave[j+1];
+tran[j][0]=tran[j+1][0];
+tran[j][1]=tran[j+1][1];
+tran[j][2]=tran[j+1][2];
+name[j]=name[j+1];
+ave[j+1]=t;
+tran[j+1][0]=t1;
+tran[j+1][1]=t2;
+tran[j+1][2]=t3;
+name[j+1]=t4;
+}
+}
+/*void bubble(double ave[]) //平均分排序 （灵感来源） 
+{
+int i,j;
+for(i=0;i<4;i++) //4个数字 
+for(j=0;j<4;j++)//4轮比较 
+if(ave[j]<ave[j+1])
+{
+	double t;
+t=ave[j];
+ave[j]=ave[j+1];
+ave[j+1]=t;
+}
+}*/
+int main ()
+{
+	char name[4];	 
+  int tran[4][3]; //输入学生名字与成绩 
+  for(int i=0;i<4;i++)
+	  {
+	  cin>>name[i]; 
+	  for(int j=0;j<3;j++)
+	  cin>>tran[i][j];
+	  }
+	  
+	double ave[4]; //计算每一个学生的平均分 
+	for(int i=0;i<4;i++)
+	{
+	ave[i]= (tran[i][0]+tran[i][1] +tran[i][2])/3;
+	//cout<<setw(10)<<ave[i]<<endl;
+	} 
+	
+	cout<<setw(10)<<"学生"<<setw(10)<<"课程1"<<setw(10)<<"课程2"<<setw(10)<<"课程3"<<setw(10)<<"平均分"<<endl; //打印表格 
+	
+	bubble(ave,tran,name) ;
+	for(int i=0;i<4;i++)
+	cout<<setw(10)<<name[i]<<setw(10)<<tran[i][0]<<setw(10)<<tran[i][1]<<setw(10)<<tran[i][2]<<setw(10)<<ave[i]<<endl;
+	system("pause");
+	return 0; 
+}
