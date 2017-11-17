@@ -1,0 +1,30 @@
+#include <iostream>  //鞍点的查找
+using namespace std;
+int main()
+{int i,j,m,t,min,max;
+int a[3][3];
+for(i=0;i<=2;i++)
+for(j=0;j<=2;j++)
+cin>>a[i][j];
+for(i=0;i<=2;i++)
+{
+for(j=0;j<=2;j++)
+{max=a[i][0];
+if(a[i][j]>max)
+{max=a[i][j];
+t=j;
+m=a[i][j];
+min=a[i][j];
+}
+for(i=0;i<=2;i++)
+{if(a[i][t]<m)
+min=a[i][t];}
+if(min=max)
+{cout<<"the an dian is"<<min<<endl;
+break;
+}
+}
+}
+return 0;
+}
+
