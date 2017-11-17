@@ -23,6 +23,8 @@ if(min=max)
 {cout<<"the an dian is"<<min<<endl;
 break;
 }
+else 
+cout<<"鞍点不存在！"<<endl;
 }
 }
 return 0;
