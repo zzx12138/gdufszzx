@@ -30,3 +30,31 @@ cout<<"鞍点不存在！"<<endl;
 return 0;
 }
 
+
+#include <iostream> //统计“the”或者“The”的个数
+#include <cstring>
+using namespace std;
+int count (char mstr[],char sstr[])
+{
+	int i,j,k,num=0;
+	for(i=0;mstr[i]!='\0';i++)
+	{
+			for(j=i,k=0;mstr[j]!='\0'&&sstr[k]==mstr[j];j++,k++);
+			if (sstr[k]=='\0')
+			num++;
+	}
+	return num;
+}
+int main()
+{
+	int num;
+	char mstring[80],sstring[82];
+	cout<<"请输入一句英文："; 
+	cin.getline(mstring,80);
+	cout<<"请输入要搜索的字符串：";
+	cin.getline(sstring,80);
+	num=count( mstring, sstring);
+	if(num>0)
+	cout<<"the或者The出现的次数为"<<num<<endl;
+	return 0; 
+ }
