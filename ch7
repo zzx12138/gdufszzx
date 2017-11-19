@@ -1,0 +1,59 @@
+#include <iostream>  //十进制转十六进制
+using namespace std;
+
+int  main()
+{
+ int x,y,i;
+ int d,n=1;
+ int * r;
+ char h[16]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+ cout<<"请输入一个十进制数 : ";
+ cin>>x;
+ y=x;
+ while(x >= 10)
+ {
+    x/=10;
+   ++n;
+ }
+ r=new int[n];
+ for(i=0 ; y >= 16 ; ++i)
+ {
+    r[i]=y%16;
+   y /= 16;
+ }
+ r[i++]=y;
+ cout<<"该十六进制数 = ";
+ for(i=(n-1) ; i>=0 ; --i)
+ {
+    cout<<h[r[i]];
+ }
+cin.get();
+system("pause");
+return 0;
+}
+
+#include <iostream> /  /二维数组周围一圈的数字之和
+using namespace std;
+int fun(int x, int y)
+{
+int num[x][y];//定义数组大小
+int score=0;
+for(int i=0;i<x;i++)//输入元素
+for(int j=0;j<y;j++)
+{
+cin>>num[i][j];
+if(i==0||i==(x-1)||j==0||j==(y-1))//一边输入一边判断
+score+=num[i][j];
+}
+cout<< score;
+
+}
+int main ()
+{
+   int num,x,y;
+   cout<<"请输入该二维数列的大小:";
+   cin>>x;
+   cin>>y;
+   fun(x, y);
+   return 0; 
+ } 
