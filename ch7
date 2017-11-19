@@ -57,3 +57,26 @@ int main ()
    fun(x, y);
    return 0; 
  } 
+
+
+#include <iostream>
+ //#include <string.h>
+using namespace std;
+void my_strlwr(char str[100])
+{
+	cout<<endl;
+	for(int i=0; i<100;i++ )
+	{
+	cin>>str[i];
+	if((int)str[i]<=90)
+	cout<<(char)((int)str[i]+32);
+	else 
+	cout<<str[i];
+	}
+}
+int main ()
+{
+	char str[100];
+	my_strlwr(str);
+	return 0; 
+}
