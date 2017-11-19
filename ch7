@@ -59,7 +59,7 @@ int main ()
  } 
 
 
-#include <iostream>
+#include <iostream>  //大写转换为小写
  //#include <string.h>
 using namespace std;
 void my_strlwr(char str[100])
@@ -67,9 +67,9 @@ void my_strlwr(char str[100])
 	cout<<endl;
 	for(int i=0; i<100;i++ )
 	{
-	cin>>str[i];
-	if((int)str[i]<=90)
-	cout<<(char)((int)str[i]+32);
+	cin>>str[i]; //循环输入 
+	if((int)str[i]<=90) //判断 大小写 
+	cout<<(char)((int)str[i]+32); //强制转换类型 
 	else 
 	cout<<str[i];
 	}
