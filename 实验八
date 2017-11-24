@@ -1,0 +1,94 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+struct student 
+{
+	int num;
+	char name[5];
+	int age;
+	char sex;
+	int score1,score2;
+};
+student Input()
+{
+	student stud ;
+	cin>>stud.num>>stud.name>>stud.age>>stud.sex>>stud.score1>>stud.score2;
+	return stud;
+}
+void Output(student stud)
+{
+	cout<<setw(10)<<stud.num<<setw(10)<<stud.name<<setw(10)<<stud.age<<setw(10)<<stud.sex<<setw(10)<<stud.score1<<setw(10)<<stud.score2<<setw(10)<<((stud.score1)+(stud.score2))/2.0<<endl;
+}
+
+int main()
+{
+	int i;
+	student stud[5];
+	for(i=0;i<5;i++)
+	stud[i]=Input();
+    cout<<setw(10)<<"学号"<<setw(10)<<"姓名"<<setw(10)<<"年龄"<<setw(10)<<"性别"<<setw(10)<<"成绩1"<<setw(10)<<"成绩2"<<setw(10)<<"平均成绩"<<endl; 
+   for(i=0;i<5;i++)
+   Output(stud[i]);
+   cout<<endl;
+   system("pause");
+   return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	union
+	{
+		int i;
+		char c[4];
+	}a;
+	cout<<"请输入一个整数：";
+	cin>>a.i;
+	cout<<"整数的四字节分别是：";
+	for(int k=3;k>=0;k--) 
+	cout<<(int)a.c[k]<<'\t';
+	cout<<endl;
+	return 0;
+}
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+enum color{red,yellow,blue,white,black,purple};
+void print(color c)
+{
+	switch(c)
+	{
+		case red:cout<<setw(10)<<"red"; break;
+		case yellow:cout<<setw(10)<<"yellow"; break;
+		case blue:cout<<setw(10)<<"blue"; break;
+		case white:cout<<setw(10)<<"white"; break;
+		case black:cout<<setw(10)<<"black"; break;
+		case purple:cout<<setw(10)<<"purple"; break;
+		default : break;
+	}
+}
+int main()
+{
+	int count=0;
+	color i,j,k;
+	for(i=red;i<=purple;i=color(int(i)+1))
+	for(j=red;j<=purple;j=color(int(j)+1))
+	if(i!=j)
+	for(k=red;k<=purple;k=color(int(k)+1))
+	if((k!=i)&&(k!=j))
+	{
+		cout<<setw(10)<<++count;
+		print(i );
+		print(j);
+		print(k);
+		cout<<endl;
+	}
+	cout<<"可能的组合数为："<<endl;
+	return 0l;
+	
+ } 
+
+
+
