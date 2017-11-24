@@ -86,7 +86,7 @@ int main()
 		cout<<endl;
 	}
 	cout<<"可能的组合数为："<<endl;
-	return 0l;
+	return 0;
 	
  } 
 
