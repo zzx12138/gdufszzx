@@ -1,0 +1,66 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+	char *name[]={"George","Mary","Susan","Tom","Davis"};
+	char *ptr;
+	int i,j,k,n=5;
+	for(i=0;i<n-1;i++)
+	{
+		k=i;
+		for(j=i;j<n;j++)
+		if(strcmp(name[k],name[j])>0)
+		k=j;
+		if(k!=i)
+		{
+			ptr=name[i];name[i]=name[k];name[k]=ptr;
+		}
+	}
+	for(i=0;i<n;i++)
+	cout<<name[i]<<'\t';
+	return 0;
+}
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+void stat(char *s) //字符指针 
+{
+  int n=0,m=0,l=0,o=0; //
+  for(int i=0;i<80;i++)  //条件的顺序要先大致排好 
+  {
+  if(*s==' ')
+  {
+   	n++;
+   	s++;
+  }
+ else if('0'<*s&&*s<'9')
+  { 
+  m++; 
+  s++; 
+  } 
+   else if('A'<=*s&&*s<='Z'||'a'<=*s&&*s<='z')
+  { 
+  l++; 
+  s++; 
+  } 
+   else if('!'<=*s&&*s<='/'||':'<=*s&&*s<='@'||'['<=*s&&*s<='96'||'{'<=*s&&*s<='127')
+   {o++;
+   s++;
+   }
+   }
+   cout<<"空格的个数："<<n<<endl;
+   cout<<"数字的个数："<<m<<endl;
+  cout<<"字母的个数："<<l<<endl;
+  cout<<"其他字符的个数："<<o<<endl;
+}
+
+int main ()
+{
+	char str[80]; 
+	strlen(str);  //定义数组并 
+    cin.get(str,80); //获取字符（包括空格）
+	stat(str);
+	return 0;
+ } 
