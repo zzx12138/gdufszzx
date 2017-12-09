@@ -1,0 +1,174 @@
+class Person   //定义一个person类
+{
+	private :
+		char Name[20];
+		char Sex;
+		int Age;
+		public:
+			void SetData(char na[],char s,int a)
+			{
+				strcpy(Name, na);
+				Sex=s;
+				Age=a;
+			}
+			void GetName(char *na)
+			{
+				strcpy(na,Name);
+			}
+			char GetSex()
+			{
+				return Sex;
+			}
+			int GetAge()
+			{
+				return Age; 
+			}
+}; 
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+#include "person.h"
+int main()
+{
+	Person a, *pa;
+	char name[20];
+	a.SetData("Cheng",'F',20);
+	a.GetName( name );
+	cout<<"Name:"<<name<<'\t';
+	cout<<"Sex:"<<a.GetSex()<<'\t';
+	cout<<"Age:"<<a.GetAge()<<endl;
+	pa=&a;
+	pa->SetData("Zhang",'M',18);
+	pa->GetName(name);
+	cout<<"Name:"<<name<<'\t';
+	cout<<"Sex:"<<a.GetSex()<<'\t';
+	cout<<"Age:"<<a.GetAge()<<endl;
+	return 0;
+}
+
+......................分割线..........................
+
+#include <iostream>  
+#include <cmath>
+using namespace std;
+class CRect       //定义一个CRect类 计算长方形的面积
+ {
+	private :
+		int left , top,right ,bottom;
+		public :
+			void setcoord(int ,int ,int ,int);
+			void getcoord(int *L,int *T,int *R,int *B)
+			{
+				*L=left;*T=top;*R=right,*B=bottom;
+			}
+			void print (void)
+			{
+			cout<<"Area="<<abs(right-left)*abs(bottom-top)<<endl;	
+			}
+};
+void CRect::setcoord(int L,int T,int R,int B)
+{
+	left=L;top=T;right=R;bottom=B;
+}
+int main ()
+{
+	CRect r1,r2;
+	int a,b,c,d;
+	r1.setcoord(100,300,50,200);
+	r1.getcoord(&a,&b,&c,&d);
+	cout<<"left="<<a<<'\t'<<"top="<<b<<endl;
+	cout<<"right="<<c<<'\t'<<"bottom="<<d<<endl;
+	r1.print();
+	r2=r1;
+	r2.print();
+	return 0;
+}
+
+......................分割线..........................
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+class Student   //定义一个学生类
+{
+	char Num[10];
+	char *Name;
+    int Score ;
+    public:
+    Student(char *nump=NULL,char *namep=NULL,int score=0)
+	{
+		if(nump)
+		strcpy(Num,nump);
+		else 
+		strcpy(Num,"");
+		if(namep)
+		{
+			Name=new char [strlen(namep)+1];
+			strcpy(Name,namep);
+		}
+		else 
+		Name=NULL;
+		Score=score;
+		cout<<"Destructor Called !\n";
+		}	
+		~Student ()
+		{
+			if(Name)delete[] Name;
+			cout<<"Destructor Called !\n";
+		}
+		void Show ()
+		{
+			cout<<Num<<'\t'<<Name<<'\t'<<Score<<endl;
+		}
+};
+int main ()
+{
+	Student a("040120518","George",80);
+	a.Show();
+	return 0;
+}
+
+......................分割线..........................
+
+
+#include <iostream>  //不同储存类别的对象调用结构函数和析构函数的时机
+using namespace std;
+class Date 
+{
+	int Year , Month , Day;
+	public :
+		Date (int y=2000,int m=1,int d=1) //A,所有参数都有默认值
+		{
+		Year=y;	Month=m;Day=d;
+		cout<<"Construction:";
+		ShowDate();
+		} 
+		void ShowDate()
+		{
+			cout<<Year<<'.'<<Month<<'.'<<Day<<endl;
+		}
+		~Date()
+		{
+			cout<<"Destruction:";
+			ShowDate();
+		}
+};
+Date d4(2017,4,4);   //全局对象（静态的） 
+void fun()
+{
+	cout<<"进入fun( )函数！\n";
+	static Date d2(2016,2,2);  //局部静态对象 
+	Date d3(2016,3,3);  //局部动态对象 
+	cout<<"退出fun( )函数！\n";
+}
+int main ()
+{
+	cout<<"进入main( )函数！\n";
+	Date d1(2016,1,1);   //局部动态对象  
+	fun();
+	fun();
+	cout<<"退出main( )函数！\n";
+	return  0; 
+ } 
+
